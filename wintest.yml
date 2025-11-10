@@ -5,4 +5,4 @@ ansible_connection: ssh
 ansible_shell_type: powershell
 tasks:
   - name: ping
-    ansible.windows.win_ping
+    ansible.windows.win_ping:
