@@ -1,8 +1,7 @@
 ---
 - name: test windows hosts
   hosts: windows
-  ansible_connection: ssh
-  ansible_shell_type: powershell
+  connection: ssh
   tasks:
     - name: ping
       ansible.windows.win_ping:
