@@ -1,0 +1,17 @@
+---
+- hosts: windows
+  name: Add a key to the registry
+  connection: ssh
+  vars:
+    ansible_shell_type: powershell
+  tasks:
+  - name: Edit HKCU reg key under specific user
+    ansible.windows.win_dsc:
+      resource_name: Registry
+      Ensure: Present
+      Key: HKEY_CURRENT_USER\ExampleKey
+      ValueName: TestValue
+      ValueData: TestData
+      PsDscRunAsCredential_username: '{{ ansible_user }}'
+      PsDscRunAsCredential_password: '{{ ansible_password }}'
+    no_log: true
