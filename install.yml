@@ -5,7 +5,6 @@
   connection: ssh
   vars:
     ansible_shell_type: powershell
-  vars:
     choco_packages:
       - name: nodejs
         version: 13.0.0
