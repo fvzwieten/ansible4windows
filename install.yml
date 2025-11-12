@@ -2,6 +2,9 @@
 - name: Install Specific versions of packages using Chocolatey
   hosts: windows
   gather_facts: false
+  connection: ssh
+  vars:
+    ansible_shell_type: powershell
   vars:
     choco_packages:
       - name: nodejs
