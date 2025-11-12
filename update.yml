@@ -1,6 +1,9 @@
 ---
 - hosts: windows
   name: This is my Windows patching playbook
+  connection: ssh
+  vars:
+    ansible_shell_type: powershell
   tasks:
     - name: Install Windows Updates
       win_updates:
